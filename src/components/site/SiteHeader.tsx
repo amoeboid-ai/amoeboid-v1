@@ -6,6 +6,7 @@ import { Wordmark } from "@/components/marks/Wordmark";
 import { NAV } from "@/lib/site";
 import { cn } from "@/lib/cn";
 import { useAdaptive } from "@/components/adaptive/AdaptiveContext";
+import { MobileNav } from "@/components/site/MobileNav";
 
 /**
  * Header — identical on every page per Phase 1 spec.
@@ -50,6 +51,7 @@ export function SiteHeader() {
               );
             })}
           </ul>
+          <MobileNav />
           <button
             type="button"
             onClick={openAdaptive}
