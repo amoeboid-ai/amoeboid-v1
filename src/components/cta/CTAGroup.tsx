@@ -49,7 +49,7 @@ export function CTAGroup({
   if (pattern === "engagement-first") {
     return (
       <div className={cn("flex flex-wrap items-center gap-x-6 gap-y-3", className)}>
-        <PillCTA tone="ink" href="/contact" ariaLabel="Start an engagement">
+        <PillCTA tone="ink" href="/company#contact" ariaLabel="Start an engagement">
           Start an engagement
         </PillCTA>
         <TextCTA onClick={openAdaptive} arrow>
@@ -64,7 +64,7 @@ export function CTAGroup({
         <PillCTA tone="ink" onClick={openAdaptive} ariaLabel="Talk to Adaptive">
           Talk to Adaptive
         </PillCTA>
-        <TextCTA href="/contact" arrow>
+        <TextCTA href="/company#contact" arrow>
           Start an engagement
         </TextCTA>
       </div>
@@ -73,7 +73,7 @@ export function CTAGroup({
   // engagement-only
   return (
     <div className={cn("inline-flex", className)}>
-      <PillCTA tone="ink" href="/contact" ariaLabel="Start an engagement">
+      <PillCTA tone="ink" href="/company#contact" ariaLabel="Start an engagement">
         Start an engagement
       </PillCTA>
     </div>

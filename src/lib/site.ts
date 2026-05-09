@@ -33,7 +33,7 @@ export const FOOTER_NAV: { heading: string; links: { href: string; label: string
   {
     heading: "Engage",
     links: [
-      { href: "/contact", label: "Start an engagement" },
+      { href: "/company#contact", label: "Start an engagement" },
       { href: "mailto:hello@amoeboid.ai", label: "Email the team" },
     ],
   },
