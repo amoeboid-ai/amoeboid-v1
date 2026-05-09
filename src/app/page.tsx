@@ -19,22 +19,21 @@ export default function Home() {
     <>
       {/* ============================== 01 HERO ============================== */}
       <Section as="section" pad="none" className="pt-14">
-        <div className="grid grid-cols-1 gap-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-12 pb-9 border-b border-ink-line">
-          <Reveal step={1}>
-            <Hero>Adaptive Creative AI Production.</Hero>
-          </Reveal>
-          <Reveal step={2} className="pb-1.5">
-            <CTAGroup pattern="homepage" />
-          </Reveal>
-        </div>
+        <Reveal step={1} className="pb-9 border-b border-ink-line">
+          <Hero>
+            Adaptive Creative AI Production. <Dim>Brand-calibrated, orchestrated at scale.</Dim>
+          </Hero>
+        </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16 pt-7 pb-16">
-          <Reveal step={3}>
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between sm:gap-12 pt-7 pb-16">
+          <Reveal step={2} className="flex-1">
             <p className="font-sans font-normal text-[clamp(22px,1.7vw,28px)] leading-[1.5] tracking-[-0.012em] text-ink-soft max-w-[48ch]">
-              A creative production system calibrated to brand, format, and scale — built and orchestrated across Sense, Form, and Reach.
+              A creative AI production system orchestrated across Sense, Form, and Reach — directed by human creativity, calibrated to your brand.
             </p>
           </Reveal>
-          <div aria-hidden="true" />
+          <Reveal step={3} className="sm:pb-1.5 shrink-0">
+            <CTAGroup pattern="homepage" />
+          </Reveal>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[2.2fr_1fr] gap-5 pb-16">
