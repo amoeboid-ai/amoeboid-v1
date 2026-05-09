@@ -98,4 +98,11 @@ a {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+  /* Decorative hero loops: hide the video, show the static poster fallback */
+  .hero-video {
+    display: none !important;
+  }
+  .hero-poster {
+    display: block !important;
+  }
 }

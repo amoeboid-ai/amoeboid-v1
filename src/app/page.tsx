@@ -40,7 +40,6 @@ export default function Home() {
               <Placeholder
                 variant="paper"
                 label="Featured"
-                centerLabel="Drop hero visual"
                 aspect="aspect-[16/9]"
                 caption={
                   <>
@@ -52,7 +51,25 @@ export default function Home() {
                     </div>
                   </>
                 }
-              />
+              >
+                <video
+                  aria-hidden="true"
+                  src="/media/hero/featured/hyrst-loop.mp4"
+                  poster="/media/hero/featured/poster.jpg"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  className="hero-video absolute inset-0 w-full h-full object-cover"
+                />
+                <img
+                  aria-hidden="true"
+                  src="/media/hero/featured/poster.jpg"
+                  alt=""
+                  className="hero-poster absolute inset-0 w-full h-full object-cover hidden"
+                />
+              </Placeholder>
             </HoverLift>
           </Reveal>
           <Reveal step={5}>
@@ -122,8 +139,6 @@ export default function Home() {
               innerFrame: false,
               media: (
                 <>
-                  {/* Decorative looping hero video. Paused + poster shown under
-                      prefers-reduced-motion via the .home-form-media CSS rule below. */}
                   <video
                     aria-hidden="true"
                     src="/media/hero/form/form-loop.mp4"
@@ -133,20 +148,14 @@ export default function Home() {
                     muted
                     playsInline
                     preload="metadata"
-                    className="home-form-video absolute inset-0 w-full h-full object-cover"
+                    className="hero-video absolute inset-0 w-full h-full object-cover"
                   />
                   <img
                     aria-hidden="true"
                     src="/media/hero/form/poster.jpg"
                     alt=""
-                    className="home-form-poster absolute inset-0 w-full h-full object-cover hidden"
+                    className="hero-poster absolute inset-0 w-full h-full object-cover hidden"
                   />
-                  <style>{`
-                    @media (prefers-reduced-motion: reduce) {
-                      .home-form-video { display: none; }
-                      .home-form-poster { display: block; }
-                    }
-                  `}</style>
                 </>
               ),
             },
