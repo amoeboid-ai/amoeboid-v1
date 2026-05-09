@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, useId, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Wordmark } from "@/components/marks/Wordmark";
 import { NAV } from "@/lib/site";
@@ -13,22 +14,33 @@ import { cn } from "@/lib/cn";
  * MobileNav — typographic 'Menu' trigger + full-screen paper-2 overlay.
  * Visible only below md (768px), where the desktop nav collapses.
  *
+ * Overlay is portaled to document.body. The site header has
+ * backdrop-blur-md; backdrop-filter creates a new containing block for
+ * fixed descendants, which would clip a fixed-positioned overlay rendered
+ * inside the header to the header's 72px box. Portaling escapes that.
+ *
  * Behaviour:
  *  - Tap Menu / press Esc / tap Close to dismiss
  *  - Body scroll lock while open
  *  - Minimal focus trap (Tab cycles within overlay, returns to trigger on close)
  *  - prefers-reduced-motion: instant fade, no slide
  *  - aria-expanded on trigger, role=dialog + aria-modal on overlay
+ *  - Uses 100dvh-equivalent (inset:0 from a body-portaled fixed element) for
+ *    iOS Safari reliability under dynamic toolbar resizing
  */
 export function MobileNav() {
   const pathname = usePathname();
   const { open: openAdaptive } = useAdaptive();
   const prefersReduced = useReducedMotion();
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const overlayId = useId();
+
+  // SSR-safe portal target
+  useEffect(() => setMounted(true), []);
 
   const close = useCallback(() => setIsOpen(false), []);
   const open = useCallback(() => setIsOpen(true), []);
@@ -101,24 +113,27 @@ export function MobileNav() {
         Menu
       </button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            id={overlayId}
-            ref={overlayRef}
-            role="dialog"
-            aria-modal="true"
-            aria-label="Site navigation"
-            initial={prefersReduced ? { opacity: 0 } : { opacity: 0, y: 10 }}
-            animate={prefersReduced ? { opacity: 1 } : { opacity: 1, y: 0 }}
-            exit={prefersReduced ? { opacity: 0 } : { opacity: 0, y: 10 }}
-            transition={{ duration: prefersReduced ? 0.15 : 0.26, ease: [0.2, 0.7, 0.2, 1] }}
-            className={cn(
-              "fixed inset-0 z-40 md:hidden",
-              "bg-paper-2 text-ink",
-              "flex flex-col"
-            )}
-          >
+      {mounted &&
+        createPortal(
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                id={overlayId}
+                ref={overlayRef}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Site navigation"
+                initial={prefersReduced ? { opacity: 0 } : { opacity: 0, y: 10 }}
+                animate={prefersReduced ? { opacity: 1 } : { opacity: 1, y: 0 }}
+                exit={prefersReduced ? { opacity: 0 } : { opacity: 0, y: 10 }}
+                transition={{ duration: prefersReduced ? 0.15 : 0.26, ease: [0.2, 0.7, 0.2, 1] }}
+                style={{ height: "100dvh" }}
+                className={cn(
+                  "fixed inset-0 z-40 md:hidden",
+                  "bg-[#EEEBE5] text-ink",
+                  "flex flex-col"
+                )}
+              >
             <div
               className="flex items-center justify-between gutter"
               style={{ height: 72 }}
@@ -189,7 +204,9 @@ export function MobileNav() {
             </nav>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+          document.body
+        )}
     </>
   );
 }
