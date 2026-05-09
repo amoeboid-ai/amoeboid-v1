@@ -20,15 +20,13 @@ export default function Home() {
       {/* ============================== 01 HERO ============================== */}
       <Section as="section" pad="none" className="pt-14">
         <Reveal step={1} className="pb-9 border-b border-ink-line">
-          <Hero>
-            Adaptive Creative AI Production. <Dim>Brand-calibrated, orchestrated at scale.</Dim>
-          </Hero>
+          <Hero>Adaptive Creative AI Production.</Hero>
         </Reveal>
 
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between sm:gap-12 pt-7 pb-16">
           <Reveal step={2} className="flex-1">
             <p className="font-sans font-normal text-[clamp(22px,1.7vw,28px)] leading-[1.5] tracking-[-0.012em] text-ink-soft max-w-[48ch]">
-              A creative AI production system orchestrated across Sense, Form, and Reach — directed by human creativity, calibrated to your brand.
+              A brand-calibrated creative AI production system — orchestrated across Sense, Form, and Reach, directed by human creativity.
             </p>
           </Reveal>
           <Reveal step={3} className="sm:pb-1.5 shrink-0">
