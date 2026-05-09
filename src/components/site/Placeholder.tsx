@@ -93,7 +93,7 @@ export function Placeholder({
       {label && (
         <span
           className={cn(
-            "absolute top-5 left-[22px] font-mono-util",
+            "absolute top-5 left-[22px] z-10 font-mono-util",
             labelTone
           )}
         >
@@ -103,7 +103,7 @@ export function Placeholder({
       {badge && (
         <span
           className={cn(
-            "absolute top-[14px] left-4 font-mono-util",
+            "absolute top-[14px] left-4 z-10 font-mono-util",
             labelTone
           )}
         >
@@ -113,7 +113,7 @@ export function Placeholder({
       {corner && (
         <span
           className={cn(
-            "absolute top-[18px] right-5 font-mono-util",
+            "absolute top-[18px] right-5 z-10 font-mono-util",
             labelTone
           )}
         >

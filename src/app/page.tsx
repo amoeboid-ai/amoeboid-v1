@@ -114,12 +114,41 @@ export default function Home() {
               variant: "form" as const,
               label: "Form",
               corner: "P—02",
-              center: "Craft register",
+              center: undefined,
               meta: ["Making layer", "04 Systems"],
               title: "Form",
               copy: "Still, motion, spatial, and sonic. Hero-grade craft across four media shapes, calibrated — not generic.",
               link: "Open Form",
-              innerFrame: true,
+              innerFrame: false,
+              media: (
+                <>
+                  {/* Decorative looping hero video. Paused + poster shown under
+                      prefers-reduced-motion via the .home-form-media CSS rule below. */}
+                  <video
+                    aria-hidden="true"
+                    src="/media/hero/form/form-loop.mp4"
+                    poster="/media/hero/form/poster.jpg"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="home-form-video absolute inset-0 w-full h-full object-cover"
+                  />
+                  <img
+                    aria-hidden="true"
+                    src="/media/hero/form/poster.jpg"
+                    alt=""
+                    className="home-form-poster absolute inset-0 w-full h-full object-cover hidden"
+                  />
+                  <style>{`
+                    @media (prefers-reduced-motion: reduce) {
+                      .home-form-video { display: none; }
+                      .home-form-poster { display: block; }
+                    }
+                  `}</style>
+                </>
+              ),
             },
             {
               href: "/reach",
@@ -151,7 +180,9 @@ export default function Home() {
                     innerFrame={tile.innerFrame}
                     reachGrid={tile.reachGrid}
                     dark={tile.dark}
-                  />
+                  >
+                    {tile.media}
+                  </Placeholder>
                 </HoverLift>
                 <div className="flex items-baseline justify-between font-mono-util text-ink-mute">
                   <span>{tile.meta[0]}</span>
