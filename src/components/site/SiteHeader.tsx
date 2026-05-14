@@ -22,8 +22,8 @@ import { MobileNav } from "@/components/site/MobileNav";
  * now lives in the footer (FOOTER_NAV) and on /contact.
  *
  * Pill labels render in literal sentence case ("Login", "Talk to Adaptive").
- * Uses .font-mono-util-cased — same mono register as font-mono-util but
- * without the uppercase text-transform.
+ * Both the top-level menu links and the right-cluster pills use the
+ * shared .nav-label token so the header reads as one typographic system.
  */
 export function SiteHeader() {
   const pathname = usePathname();
@@ -63,7 +63,7 @@ export function SiteHeader() {
               "inline-flex items-center gap-2 rounded-full",
               "px-3 py-3 md:px-4 md:py-3",
               "bg-paper text-ink border border-ink",
-              "font-mono-util-cased",
+              "nav-label",
               "hover:bg-ink hover:text-paper transition-colors",
               // Hide label below 360px, show icon only
               "max-[359px]:px-2"
@@ -95,7 +95,7 @@ export function SiteHeader() {
             data-adaptive-trigger
             className={cn(
               "inline-flex items-center gap-2 rounded-full px-4 py-3",
-              "bg-ink text-paper font-mono-util-cased",
+              "bg-ink text-paper nav-label",
               "hover:bg-ink/90 transition-colors"
             )}
           >
@@ -138,7 +138,7 @@ function NavLink({
           aria-haspopup="menu"
           aria-expanded={productsOpen}
           className={cn(
-            "font-display font-medium text-[16px] tracking-[-0.005em]",
+            "nav-label",
             "text-ink-soft hover:text-ink transition-colors",
             active &&
               "text-ink relative after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-px after:bg-ink"
@@ -189,7 +189,7 @@ function NavLink({
         href={item.href}
         aria-current={active ? "page" : undefined}
         className={cn(
-          "font-display font-medium text-[16px] tracking-[-0.005em]",
+          "nav-label",
           "text-ink-soft hover:text-ink transition-colors",
           active &&
             "text-ink relative after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-px after:bg-ink"
