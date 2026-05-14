@@ -13,13 +13,17 @@ import { MobileNav } from "@/components/site/MobileNav";
  * Header — identical on every page.
  *
  * Left:  wordmark
- * Centre nav (≥md): Products (dropdown · Sense/Form/Reach) · Engine · Work · Company · Community
+ * Centre nav (≥md): Products (dropdown · Sense/Form/Reach/Adapt) · Work · Company · Community
  * Right cluster:    Login (ghost) · Talk to Adaptive (primary pill)
  * Mobile (<md):     Login (compact) · Adaptive (pill) · Menu trigger
  *
  * Talk to Adaptive opens the Adaptive widget anchored to the header
  * top-right (see AdaptiveWidget). The old Contact pill is removed and
  * now lives in the footer (FOOTER_NAV) and on /contact.
+ *
+ * Pill labels render in literal sentence case ("Login", "Talk to Adaptive").
+ * Uses .font-mono-util-cased — same mono register as font-mono-util but
+ * without the uppercase text-transform.
  */
 export function SiteHeader() {
   const pathname = usePathname();
@@ -59,7 +63,7 @@ export function SiteHeader() {
               "inline-flex items-center gap-2 rounded-full",
               "px-3 py-3 md:px-4 md:py-3",
               "bg-paper text-ink border border-ink",
-              "font-mono-util text-[11px] tracking-[0.16em]",
+              "font-mono-util-cased",
               "hover:bg-ink hover:text-paper transition-colors",
               // Hide label below 360px, show icon only
               "max-[359px]:px-2"
@@ -91,7 +95,7 @@ export function SiteHeader() {
             data-adaptive-trigger
             className={cn(
               "inline-flex items-center gap-2 rounded-full px-4 py-3",
-              "bg-ink text-paper font-mono-util text-[11px] tracking-[0.16em]",
+              "bg-ink text-paper font-mono-util-cased",
               "hover:bg-ink/90 transition-colors"
             )}
           >

@@ -272,7 +272,7 @@ export function AdaptiveWidget() {
                     Hi. I&rsquo;m Adaptive.
                   </h2>
                   <p className="font-sans text-[15px] leading-[1.5] text-ink-soft max-w-[36ch]">
-                    Ask about Sense, Form, Reach, or how an engagement starts. I can route you to a partner when ready.
+                    Ask about Sense, Form, Reach, Adapt, or how an engagement starts. I can route you to a partner when ready.
                   </p>
                 </div>
 

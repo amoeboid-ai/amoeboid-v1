@@ -15,7 +15,7 @@ import { Crumb, NumberedLabel, ArrowLink } from "@/components/site/PageChrome";
 import { CTAGroup } from "@/components/cta/CTAGroup";
 import { cn } from "@/lib/cn";
 
-type Pillar = "Sense" | "Form" | "Reach" | "Engine";
+type Pillar = "Sense" | "Form" | "Reach" | "Adapt";
 
 interface FeaturedCase {
   ix: string;
@@ -63,7 +63,7 @@ const INDUSTRIES = [
   "Other",
 ] as const;
 
-const PILLARS = ["All", "Sense", "Form", "Reach", "Engine"] as const;
+const PILLARS = ["All", "Sense", "Form", "Reach", "Adapt"] as const;
 
 const FORM_SYSTEMS = ["All", "Still", "Motion", "Spatial", "Sonic"] as const;
 
@@ -78,7 +78,7 @@ const FEATURED: FeaturedCase[] = [
       "Hyrst arrived with a heritage archive, a fragmented seasonal output, and a brand that read differently in every channel. We held the calibration substrate, ran continuous Sense across culture and category, and produced two seasons of stills and motion at brand-level fidelity — with channel-native variants pushed through Reach.",
     tags: ["Industry — Apparel", "Form — Still + Motion", "Sense — All five"],
     industry: "Apparel",
-    pillar: "Engine",
+    pillar: "Adapt",
     formSystem: "Motion",
     variant: "wide",
     placeholder: {
@@ -128,12 +128,12 @@ const FEATURED: FeaturedCase[] = [
     ix: "F04",
     slug: "/work",
     title: "Verge Foundation —",
-    dim: "three cycles of brand custodianship under one Engine.",
+    dim: "three cycles of brand custodianship, held by Adapt.",
     lede:
       "A foundation rebuilding its public-facing identity across exhibitions, programmes, and digital archive. We've held the calibration substrate continuously since 2023; each cycle composes a different mix of Sense, Form, and Reach against the same contract.",
-    tags: ["Industry — Cultural institution", "Engine — Multi-cycle", "Years — 03"],
+    tags: ["Industry — Cultural institution", "Adapt — Multi-cycle", "Years — 03"],
     industry: "Cultural",
-    pillar: "Engine",
+    pillar: "Adapt",
     formSystem: "Still",
     variant: "ink",
     placeholder: {
@@ -205,9 +205,9 @@ const INDEX: IndexCase[] = [
     year: "2024",
     sub: "Private bank rebrand — calibrated across regulated touchpoints.",
     industry: "Finance",
-    pillar: "Engine",
+    pillar: "Adapt",
     formSystem: "Still",
-    tags: ["Finance", "Engine multi-cycle", "Still"],
+    tags: ["Finance", "Adapt multi-cycle", "Still"],
     aspect: "port",
     ph: { variant: "vis-d", dark: true },
   },
@@ -231,9 +231,9 @@ const INDEX: IndexCase[] = [
     year: "2024",
     sub: "Foundation programme — second cycle of multi-year custodianship.",
     industry: "Cultural",
-    pillar: "Engine",
+    pillar: "Adapt",
     formSystem: "Spatial",
-    tags: ["Cultural", "Engine", "Still+Spatial"],
+    tags: ["Cultural", "Adapt", "Still+Spatial"],
     aspect: "square",
     ph: { variant: "vis-c" },
   },
@@ -294,11 +294,11 @@ const INDEX: IndexCase[] = [
     slug: "/work",
     title: "Drift Coffee",
     year: "2023",
-    sub: "Specialty roaster — full Engine cycle, multi-format.",
+    sub: "Specialty roaster — full Adapt cycle, multi-format.",
     industry: "Other",
-    pillar: "Engine",
+    pillar: "Adapt",
     formSystem: "Motion",
-    tags: ["Other", "Engine", "Still+Motion"],
+    tags: ["Other", "Adapt", "Still+Motion"],
     aspect: "wide",
     ph: { variant: "ink", dark: true },
   },

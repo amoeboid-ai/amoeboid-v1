@@ -311,11 +311,11 @@ export const SENSE_PAGE: SystemPageData = {
       href: "/reach",
     },
     {
-      label: "Engine",
-      name: "How it composes",
-      foot: "Adaptive system",
+      label: "Product 04",
+      name: "Adapt",
+      foot: "Loop-closer layer",
       arrow: "→",
-      href: "/engine",
+      href: "/adapt",
     },
     {
       label: "Up one",
@@ -512,11 +512,11 @@ export const FORM_PAGE: SystemPageData = {
       href: "/reach",
     },
     {
-      label: "Engine",
-      name: "How it composes",
-      foot: "Adaptive system",
+      label: "Product 04",
+      name: "Adapt",
+      foot: "Loop-closer layer",
       arrow: "→",
-      href: "/engine",
+      href: "/adapt",
     },
     {
       label: "Up one",
@@ -705,11 +705,11 @@ export const REACH_PAGE: SystemPageData = {
       href: "/form",
     },
     {
-      label: "Engine",
-      name: "How it composes",
-      foot: "Adaptive system",
+      label: "Product 04",
+      name: "Adapt",
+      foot: "Loop-closer layer",
       arrow: "→",
-      href: "/engine",
+      href: "/adapt",
     },
     {
       label: "Up one",
@@ -736,7 +736,7 @@ export const ADAPT_PAGE: SystemPageData = {
   heroClaimLead: "The loop-closer.",
   heroClaimDim: "Calibration that compounds.",
   heroLede:
-    "Adapt runs continuously beneath every engagement, observing performance signal across Sense, Form, Reach, and the wider field. At cycle boundaries it delivers a refreshed calibration substrate, a written change brief, and composed recommendations for the next cycle. The substrate never resets — it sharpens. Brand calibration becomes a compounding asset, not a re-litigated start.",
+    "Continuous loop-closer. Adapt monitors signal beneath every engagement, refreshes the calibration substrate at cycle close, and composes forward direction for the next cycle. Standalone-capable — established brands can engage Adapt directly, bringing their own calibration substrate, and Adapt evolves it forward as the field moves.",
   heroCornerTL: "Adapt / Anchor · v1.0",
   heroCornerBR: "Closing register",
   heroAnchorMark: "Loop-closer imagery",
@@ -776,10 +776,10 @@ export const ADAPT_PAGE: SystemPageData = {
       num: "A—01",
       name: "Track",
       claim:
-        "Continuous monitoring of signal across all four Products and the external field. Detects calibration drift, format shifts, and audience response patterns before they surface in production.",
+        "Always-on signal capture across every active engagement. Track reads output from each Product currently engaged — substrate state from Sense, creative performance from Form, market and audience response from Reach — and pairs it with external field signal: market shifts, cultural movement, format change. Runs continuously beneath the engagement, not as a periodic audit.",
       includes:
-        "Continuous signal monitoring across Sense, Form, Reach; calibration drift detection; format shift tracking; audience response pattern reads; external field signal capture.",
-      tags: ["Drift", "Signal", "Field"],
+        "Continuous per-Product signal capture, calibration drift detection, format shift tracking, audience response reads, competitive and cultural field monitoring, signal-to-substrate routing.",
+      tags: ["Continuous monitoring", "Drift", "Signal", "Field"],
       visVariant: "vis-c",
       visLabel: "A—01 / Track",
       visCenter: "Signal stream",
@@ -790,10 +790,10 @@ export const ADAPT_PAGE: SystemPageData = {
       num: "A—02",
       name: "Tune",
       claim:
-        "Cycle-end refresh of the brand calibration substrate. Delivers the updated substrate plus a written change brief describing what shifted and why — version-controlled, queryable, carried forward.",
+        "At cycle close, Tune reconciles tracked signal against the calibration substrate. Drift gets surfaced. Stabilised positions get sharpened. Patterns that no longer fit get retired. Two outputs: a refreshed substrate carried into the next cycle, and a written change brief documenting what shifted and why.",
       includes:
-        "Substrate refresh, calibration update document, written change brief, cycle delta report, version-controlled substrate handoff.",
-      tags: ["Refresh", "Substrate", "Change brief"],
+        "Substrate refresh, calibration update document, written change brief, cycle delta report, drift surface and retirement log, version-controlled substrate handoff.",
+      tags: ["Cycle-end refresh", "Substrate", "Change brief"],
       visVariant: "vis-a",
       visLabel: "A—02 / Tune",
       visCenter: "Substrate delta",
@@ -804,10 +804,10 @@ export const ADAPT_PAGE: SystemPageData = {
       num: "A—03",
       name: "Compose",
       claim:
-        "Forward-looking composition of recommended adjustments to Sense, Form, and Reach for the next cycle. Strategic brief, not abstract advice — named moves, sequenced, with rationale.",
+        "Tune tells you where the substrate now sits. Compose tells you what to do next. Forward recommendations span Product mix, creative priorities, and tactical adjustments — composed against the refreshed substrate, not reset from scratch. Compose is how each cycle starts a step ahead of the last.",
       includes:
-        "Forward composition memo, per-Product adjustment recommendations, next-cycle brief, strategic prioritisation, sequencing notes.",
-      tags: ["Forward", "Adjustments", "Closes the loop"],
+        "Forward composition memo, per-Product adjustment recommendations across Sense/Form/Reach, next-cycle creative priorities, tactical sequencing, Product-mix recommendation.",
+      tags: ["Forward direction", "Adjustments", "Closes the loop"],
       visVariant: "vis-d",
       visLabel: "A—03 / Compose",
       visCenter: "Forward read",

@@ -10,7 +10,7 @@ import { cn } from "@/lib/cn";
  *   homepage:
  *     primary  = "Talk to Adaptive →" (opens widget) — single CTA, no secondary
  *
- *   product / engine / work / case-study:
+ *   product / work / case-study:
  *     primary   = "Start an engagement →" (-> /contact)
  *     secondary = "Talk to Adaptive"      (opens widget)
  *
@@ -24,7 +24,7 @@ import { cn } from "@/lib/cn";
 
 type Pattern =
   | "homepage"
-  | "engagement-first" /* product / engine / work / case-study */
+  | "engagement-first" /* product / work / case-study */
   | "adaptive-first" /* products hub closing */
   | "engagement-only"; /* company contact + footer */
 

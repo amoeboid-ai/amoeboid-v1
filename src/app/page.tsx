@@ -76,13 +76,13 @@ export default function Home() {
             <HoverLift>
               <Placeholder
                 variant="paper"
-                label="Engine"
+                label="Orchestration"
                 centerLabel="Drop secondary visual"
                 aspect="aspect-[4/5] lg:aspect-[4/5]"
                 caption={
                   <>
                     <div className="font-display font-medium text-[22px] leading-[1.2] tracking-[-0.018em] text-ink max-w-[22ch]">
-                      Stack diagram preview
+                      Four Products. One system.
                     </div>
                     <div className="font-mono-util text-ink-mute whitespace-nowrap">
                       4:5 · Static
@@ -286,30 +286,33 @@ export default function Home() {
         </Reveal>
       </Section>
 
-      {/* ============================== 04 ENGINE TEASER ============================== */}
-      <Section as="section" pad="none" id="engine" className="py-[140px] border-b border-ink-line">
+      {/* ============================== 04 THE SYSTEM ============================== */}
+      <Section as="section" pad="none" id="system" className="py-[140px] border-b border-ink-line">
         <Reveal step={0} className="mb-7">
-          <Eyebrow>Section 04 · Engine</Eyebrow>
+          <Eyebrow>Section 04 · The system</Eyebrow>
         </Reveal>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-center">
           <div>
             <Reveal step={1}>
-              <SectionDisplay className="max-w-[14ch]">
+              <SectionDisplay className="max-w-[16ch]">
                 The orchestration <Dim>is the product.</Dim>
               </SectionDisplay>
             </Reveal>
             <Reveal step={2} className="mt-6">
-              <Body className="max-w-[44ch]" tone="soft">
-                <strong className="text-ink font-medium">Engine is the substrate beneath Sense, Form, and Reach.</strong> Four addressable layers — L1 through L4 — that carry brand calibration through every cycle without resetting between them.
+              <Body className="max-w-[46ch]" tone="soft">
+                <strong className="text-ink font-medium">Four Products. One brand-calibrated system. Each cycle sharpens the substrate.</strong>
               </Body>
-              <Body className="mt-3.5 max-w-[44ch]" tone="soft">
-                The stack is visible by design. Inspectable composition per engagement. The architecture is the marketing.
+              <Body className="mt-3.5 max-w-[46ch]" tone="soft">
+                Sense calibrates the brand substrate. Form, Reach, and Adapt operate against it — producing the work, surfacing it, and tracking how it lands. Adapt closes the loop: it reads signal from across the system, refreshes the substrate at cycle close, and composes forward direction for what comes next.
+              </Body>
+              <Body className="mt-3.5 max-w-[46ch]" tone="soft">
+                The result is a creative production system where calibration compounds, never resets.
               </Body>
               <Link
-                href="/engine"
+                href="/adapt"
                 className="mt-7 inline-flex items-center gap-2.5 font-display font-medium text-[15px] tracking-[-0.005em] text-ink border-b border-ink pb-1 hover:opacity-70 transition-opacity"
               >
-                See the Engine
+                Open Adapt
                 <span aria-hidden>→</span>
               </Link>
             </Reveal>
@@ -318,14 +321,17 @@ export default function Home() {
           <Reveal step={3}>
             <div className="flex flex-col gap-2 p-7 bg-paper-2 border border-ink-line rounded-[14px]" aria-hidden="true">
               {[
-                { code: "L1", name: "Calibration", sub: "Substrate that holds the brand", on: 5 },
-                { code: "L2", name: "Reading", sub: "Sense — field, audience, format", on: 4 },
-                { code: "L3", name: "Making", sub: "Form — still, motion, spatial, sonic", on: 3 },
-                { code: "L4", name: "Activation", sub: "Reach — variant, channel, signal", on: 2 },
+                { code: "P—01", name: "Sense", sub: "Calibrates the substrate" },
+                { code: "P—02", name: "Form", sub: "Makes the work" },
+                { code: "P—03", name: "Reach", sub: "Carries it to channel" },
+                { code: "P—04", name: "Adapt", sub: "Closes the loop · refreshes substrate", loop: true },
               ].map((l) => (
                 <div
                   key={l.code}
-                  className="grid grid-cols-[56px_1fr_auto] gap-[18px] items-center px-5 py-[18px] bg-paper border border-ink-line rounded-[10px]"
+                  className={cn(
+                    "grid grid-cols-[64px_1fr_auto] gap-[18px] items-center px-5 py-[18px] bg-paper border border-ink-line rounded-[10px]",
+                    l.loop && "ring-1 ring-ink/10"
+                  )}
                 >
                   <span className="font-mono-util text-ink-mute">{l.code}</span>
                   <span className="font-display font-medium text-[17px] tracking-[-0.012em] text-ink">
@@ -334,19 +340,21 @@ export default function Home() {
                       {l.sub}
                     </span>
                   </span>
-                  <span className="flex gap-[3px]">
-                    {[0, 1, 2, 3, 4].map((i) => (
-                      <i
-                        key={i}
-                        className={cn(
-                          "block w-1 h-3.5 rounded-[1px]",
-                          i < l.on ? "bg-ink" : "bg-ink-faint"
-                        )}
-                      />
-                    ))}
+                  <span className="font-mono-util text-ink-mute flex items-center gap-1">
+                    {l.loop ? (
+                      <>
+                        <span aria-hidden className="inline-block w-4 h-px bg-ink-faint" />
+                        <span aria-hidden>↺</span>
+                      </>
+                    ) : (
+                      <span aria-hidden>→</span>
+                    )}
                   </span>
                 </div>
               ))}
+              <p className="mt-3 px-2 font-display text-[13px] leading-[1.5] tracking-[-0.005em] text-ink-soft">
+                Adapt reads signal across the other three — and the wider field — then feeds a refreshed substrate forward into the next cycle.
+              </p>
             </div>
           </Reveal>
         </div>
@@ -408,7 +416,7 @@ export default function Home() {
 
         <Reveal step={4} className="mt-14 pt-6 border-t border-ink-line">
           <div className="flex flex-wrap items-center justify-between gap-6 font-mono-util text-ink-mute">
-            <span>04 of 26 surfaced · 11 industries</span>
+            <span>Selected · 04 cases surfaced</span>
             <Link href="/work" className="text-ink border-b border-ink pb-0.5 hover:opacity-70 transition-opacity">
               Open Work index →
             </Link>
@@ -443,7 +451,7 @@ export default function Home() {
         <Reveal step={3} className="mt-16 pt-6 border-t border-ink-line">
           <div className="flex gap-14 flex-wrap">
             {[
-              { k: "Cycles compounded", v: "26 engagements · 11 industries" },
+              { k: "Cycles compounded", v: "Designed for 25+ engagement scale" },
               { k: "Calibration retention", v: "100% · substrate carried cross-cycle" },
               { k: "Forward edge", v: "Format Intelligence · S—05" },
             ].map((s) => (

@@ -77,6 +77,15 @@ body {
   line-height: 1.4;
 }
 
+/* Mono utility — sentence case variant (header pills, etc.) */
+.font-mono-util-cased {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 .section-pad {
   padding-block: clamp(72px, 8vw, 120px);
 }

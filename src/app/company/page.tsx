@@ -18,8 +18,8 @@ export const metadata = {
 const STATS = [
   { k: "Founded", v: "2023 · Brooklyn / London" },
   { k: "Discipline", v: "Adaptive creative production" },
-  { k: "Engagements", v: "26 cases · 11 industries" },
-  { k: "Stack", v: "L1–L4 · visible" },
+  { k: "Engagements", v: "Designed for 25+ engagement scale" },
+  { k: "Architecture", v: "Four Products · orchestrated" },
 ];
 
 const PILLARS = [
@@ -36,7 +36,7 @@ const PILLARS = [
   {
     num: "Pillar 03",
     h: "Modular entry",
-    p: "Sense without Form. Form without Reach. Engine without campaign. The contract is composed, never packaged.",
+    p: "Sense without Form. Form without Reach. Adapt without campaign. The contract is composed, never packaged.",
   },
 ];
 
@@ -49,7 +49,7 @@ const TENETS = [
 
 const LINEAGE = [
   { yr: "2023", lbl: "Substrate concept" },
-  { yr: "2024", lbl: "First Engine cycle" },
+  { yr: "2024", lbl: "First multi-cycle engagement" },
   { yr: "2025", lbl: "Loop closure published" },
   { yr: "2026 · now", lbl: "Format Intelligence", now: true },
   { yr: "2027", lbl: "Calibration as service" },
@@ -140,7 +140,7 @@ export default function CompanyPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-20">
             <div className="space-y-4">
               <Body tone="soft" className="max-w-[48ch]">
-                <strong className="text-ink font-medium">The stack is visible by design.</strong> Four layers — Engine (L1), Sense (L2), Form (L3), Reach (L4) — each addressable, each inspectable. Clients see what is composed for them and where the calibration lives. A stack you can&rsquo;t inspect is a stack you can&rsquo;t trust to compound; we treat that as a structural property of the work, not a marketing one.
+                <strong className="text-ink font-medium">The orchestration is visible by design.</strong> Four Products — Sense, Form, Reach, Adapt — each addressable, each inspectable. Clients see what is composed for them and where the calibration lives. An orchestration you can&rsquo;t inspect is one you can&rsquo;t trust to compound; we treat that as a structural property of the work, not a marketing one.
               </Body>
               <Body tone="soft" className="max-w-[48ch]">
                 <strong className="text-ink font-medium">Brand Calibration is the moat.</strong> The substrate that holds a brand&rsquo;s register coherent across volume is what we sell. The output is downstream of it. Every engagement adds to the substrate; the substrate never resets between cycles.
@@ -148,7 +148,7 @@ export default function CompanyPage() {
             </div>
             <div className="space-y-4">
               <Body tone="soft" className="max-w-[48ch]">
-                <strong className="text-ink font-medium">Modular entry, not packaged offerings.</strong> A client can begin at any layer. Sense without Form. Form without Reach. Engine multi-cycle without a single campaign. The contract composes against need, not against a price sheet. Cases run in our portfolio prove this empirically across eleven industries.
+                <strong className="text-ink font-medium">Modular entry, not packaged offerings.</strong> A client can begin at any Product. Sense without Form. Form without Reach. Adapt multi-cycle without a single campaign. The contract composes against need, not against a price sheet. Cases in our portfolio prove this empirically.
               </Body>
               <Body tone="soft" className="max-w-[48ch]">
                 <strong className="text-ink font-medium">Agentic and human, named.</strong> Where work runs autonomously through the stack and where it is held by a person is published per case, not obscured. The studio reads like an instrument; the instrument reads like a substrate.

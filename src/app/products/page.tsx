@@ -271,7 +271,7 @@ export default function ProductsHub() {
         </div>
         <Reveal step={2}>
           <Body className="max-w-[78ch]" tone="soft">
-            <strong className="text-ink font-medium">Form is the creation engine.</strong> Sense informs every output with brand calibration and audience grounding. Reach activates outputs across channels through variants, deployment, and performance loops.
+            <strong className="text-ink font-medium">Form is the creation layer.</strong> Sense informs every output with brand calibration and audience grounding. Reach activates outputs across channels through variants, deployment, and performance loops. Adapt closes the loop — refreshing the substrate against signal from the field.
           </Body>
         </Reveal>
 

@@ -180,7 +180,7 @@ const RELATED = [
     num: "F04",
     title: "Verge Foundation",
     year: "2026",
-    sub: "Three cycles of brand custodianship under one Engine.",
+    sub: "Three cycles of brand custodianship, held by Adapt.",
     variant: "vis-d" as const,
     dark: true,
   },
@@ -617,7 +617,7 @@ export default function SonanceCase() {
               <p className="font-display text-[14.5px] leading-[1.55] tracking-[-0.005em] text-ink-soft max-w-[36ch]">
                 72-hour loop closure pattern, deferred-Sonic substrate tag,
                 and Sense-first sequencing template — all promoted to
-                Engine-level patterns after this cycle.
+                substrate-level patterns after this cycle.
               </p>
             </div>
           </Reveal>

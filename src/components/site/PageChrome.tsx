@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 import type { ReactNode } from "react";
 
 /**
- * Small page-chrome primitives used across product / engine / work / company pages.
+ * Small page-chrome primitives used across product / work / company pages.
  */
 
 export function Crumb({
