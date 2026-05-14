@@ -171,13 +171,15 @@ export function AdaptiveWidget() {
           }}
           className={cn(
             "fixed z-[9999]",
-            // Desktop: anchored top-right just below the 72px sticky header
+            // Desktop: anchored top-right just below the 72px sticky header.
+            // No inset-0 here — that would set left:0 and override the right anchor.
             "md:top-[80px] md:right-6 lg:right-8",
             "md:w-[var(--adaptive-w)] md:h-[var(--adaptive-h)]",
             "md:rounded-[20px] md:border md:border-ink-line",
             "md:shadow-[0_30px_80px_-30px_rgba(12,12,12,0.45)]",
-            // Mobile: full-viewport sheet
-            "inset-0 max-md:rounded-none max-md:border-0",
+            // Mobile: full-viewport sheet (inset-0 scoped to <md so the
+            // left edge does not collide with the desktop right anchor).
+            "max-md:inset-0 max-md:rounded-none max-md:border-0",
             "flex flex-col bg-paper overflow-hidden"
           )}
         >

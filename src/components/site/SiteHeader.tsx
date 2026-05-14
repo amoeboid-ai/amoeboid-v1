@@ -57,7 +57,7 @@ export function SiteHeader() {
             aria-label="Login"
             className={cn(
               "inline-flex items-center gap-2 rounded-full",
-              "px-3 py-2 md:px-4 md:py-2",
+              "px-3 py-3 md:px-4 md:py-3",
               "bg-paper text-ink border border-ink",
               "font-mono-util text-[11px] tracking-[0.16em]",
               "hover:bg-ink hover:text-paper transition-colors",
@@ -90,7 +90,7 @@ export function SiteHeader() {
             onClick={openAdaptive}
             data-adaptive-trigger
             className={cn(
-              "inline-flex items-center gap-2 rounded-full px-4 py-2",
+              "inline-flex items-center gap-2 rounded-full px-4 py-3",
               "bg-ink text-paper font-mono-util text-[11px] tracking-[0.16em]",
               "hover:bg-ink/90 transition-colors"
             )}
@@ -134,7 +134,7 @@ function NavLink({
           aria-haspopup="menu"
           aria-expanded={productsOpen}
           className={cn(
-            "font-display font-medium text-[14px] tracking-[-0.005em]",
+            "font-display font-medium text-[16px] tracking-[-0.005em]",
             "text-ink-soft hover:text-ink transition-colors",
             active &&
               "text-ink relative after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-px after:bg-ink"
@@ -185,7 +185,7 @@ function NavLink({
         href={item.href}
         aria-current={active ? "page" : undefined}
         className={cn(
-          "font-mono-util tracking-[0.16em] uppercase text-[11px]",
+          "font-display font-medium text-[16px] tracking-[-0.005em]",
           "text-ink-soft hover:text-ink transition-colors",
           active &&
             "text-ink relative after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-px after:bg-ink"

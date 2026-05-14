@@ -112,7 +112,7 @@ export function MobileNav() {
         aria-label="Open menu"
         className={cn(
           "md:hidden inline-flex items-center",
-          "font-display font-medium text-[15px] tracking-[-0.005em] text-ink",
+          "font-display font-medium text-[16px] tracking-[-0.005em] text-ink",
           "hover:opacity-70 transition-opacity"
         )}
       >
@@ -158,7 +158,7 @@ export function MobileNav() {
                 onClick={close}
                 aria-label="Close menu"
                 className={cn(
-                  "font-display font-medium text-[15px] tracking-[-0.005em] text-ink",
+                  "font-display font-medium text-[16px] tracking-[-0.005em] text-ink",
                   "hover:opacity-70 transition-opacity"
                 )}
               >
