@@ -63,7 +63,7 @@ export interface RouteTile {
 
 export interface SystemPageData {
   /** URL-safe id, e.g. "sense" */
-  slug: "sense" | "form" | "reach";
+  slug: "sense" | "form" | "reach" | "adapt";
   /** Display name, e.g. "Sense" — also drives crumb + cross blocks. */
   name: string;
   /** Page metadata title (without site suffix). */
@@ -320,7 +320,7 @@ export const SENSE_PAGE: SystemPageData = {
     {
       label: "Up one",
       name: "Products index",
-      foot: "All three Products",
+      foot: "All four Products",
       arrow: "←",
       href: "/products",
     },
@@ -521,7 +521,7 @@ export const FORM_PAGE: SystemPageData = {
     {
       label: "Up one",
       name: "Products index",
-      foot: "All three Products",
+      foot: "All four Products",
       arrow: "←",
       href: "/products",
     },
@@ -714,13 +714,200 @@ export const REACH_PAGE: SystemPageData = {
     {
       label: "Up one",
       name: "Products index",
-      foot: "All three Products",
+      foot: "All four Products",
       arrow: "←",
       href: "/products",
     },
   ],
   crossCtaCopy:
     "Engagements start at a single System, a single Product, or as composed orchestration. Brand calibration compounds either way.",
+};
+
+/* =========================================================================
+   ADAPT
+   ========================================================================= */
+export const ADAPT_PAGE: SystemPageData = {
+  slug: "adapt",
+  name: "Adapt",
+  metaTitle: "Adapt — The loop-closer. Calibration that compounds.",
+  metaDescription:
+    "Adapt runs continuously beneath every engagement, observing signal across Sense, Form, Reach, and the field. At cycle boundaries it refreshes the calibration substrate, briefs what shifted, and composes the next cycle's adjustments.",
+
+  heroClaimLead: "The loop-closer.",
+  heroClaimDim: "Calibration that compounds.",
+  heroLede:
+    "Adapt runs continuously beneath every engagement, observing performance signal across Sense, Form, Reach, and the wider field. At cycle boundaries it delivers a refreshed calibration substrate, a written change brief, and composed recommendations for the next cycle. The substrate never resets — it sharpens. Brand calibration becomes a compounding asset, not a re-litigated start.",
+  heroCornerTL: "Adapt / Anchor · v1.0",
+  heroCornerBR: "Closing register",
+  heroAnchorMark: "Loop-closer imagery",
+  heroTicks: ["Track", "Tune", "Compose"],
+
+  whatDisplayLead: "A closing layer,",
+  whatDisplayDim: "not a quarterly review.",
+  whatBodyStrong:
+    "Adapt produces a refreshed substrate, a written change brief, and forward composition",
+  whatBody: [
+    " — three artifacts that close one cycle and stage the next. It is not a report read once and filed. It is a working layer that updates the substrate every other Product composes against.",
+    "Three Systems run together. Track holds a continuous read on signal across all four Products and the external field. Tune refreshes the calibration substrate at cycle boundaries and writes the change brief that documents what shifted and why. Compose names the forward adjustments — strategic, specific, sequenced — that Sense, Form, and Reach run against in the next cycle.",
+    "For brand owners and operators who treat brand as compounding infrastructure rather than campaign output — and who refuse to let each cycle reset the substrate they built in the last one.",
+  ],
+  triplet: [
+    {
+      head: "Answers",
+      body: "What shifted this cycle, and what should the next cycle do about it?",
+    },
+    {
+      head: "Produces",
+      body: "A refreshed substrate, a written change brief, and composed forward recommendations.",
+    },
+    {
+      head: "For",
+      body: "Operators who treat calibration as compounding infrastructure, not campaign rework.",
+    },
+  ],
+
+  systemsCountLabel: "Three Systems",
+  systemsDisplayLead: "Three Systems.",
+  systemsDisplayDim: "Track. Tune. Compose.",
+  systemsIntro:
+    "Systems A—01 through A—03 form Adapt as a Product. Each is a complete unit of work; together they close the loop from field signal back into the calibration substrate and forward into the next cycle's brief. Compose (A—03) is the most distinctive of the three — the forward move most production stacks leave to chance.",
+  systems: [
+    {
+      num: "A—01",
+      name: "Track",
+      claim:
+        "Continuous monitoring of signal across all four Products and the external field. Detects calibration drift, format shifts, and audience response patterns before they surface in production.",
+      includes:
+        "Continuous signal monitoring across Sense, Form, Reach; calibration drift detection; format shift tracking; audience response pattern reads; external field signal capture.",
+      tags: ["Drift", "Signal", "Field"],
+      visVariant: "vis-c",
+      visLabel: "A—01 / Track",
+      visCenter: "Signal stream",
+      visMeta: "Continuous read",
+      imageSide: "right",
+    },
+    {
+      num: "A—02",
+      name: "Tune",
+      claim:
+        "Cycle-end refresh of the brand calibration substrate. Delivers the updated substrate plus a written change brief describing what shifted and why — version-controlled, queryable, carried forward.",
+      includes:
+        "Substrate refresh, calibration update document, written change brief, cycle delta report, version-controlled substrate handoff.",
+      tags: ["Refresh", "Substrate", "Change brief"],
+      visVariant: "vis-a",
+      visLabel: "A—02 / Tune",
+      visCenter: "Substrate delta",
+      visMeta: "Cycle boundary",
+      imageSide: "left",
+    },
+    {
+      num: "A—03",
+      name: "Compose",
+      claim:
+        "Forward-looking composition of recommended adjustments to Sense, Form, and Reach for the next cycle. Strategic brief, not abstract advice — named moves, sequenced, with rationale.",
+      includes:
+        "Forward composition memo, per-Product adjustment recommendations, next-cycle brief, strategic prioritisation, sequencing notes.",
+      tags: ["Forward", "Adjustments", "Closes the loop"],
+      visVariant: "vis-d",
+      visLabel: "A—03 / Compose",
+      visCenter: "Forward read",
+      visMeta: "Loop closed",
+      distinctive: true,
+      distinctivePill: "A—03 · Closes the loop",
+    },
+  ],
+  modularRestateStrong: "Modular entry.",
+  modularRestate:
+    "Engage A—01 alone for a brand-drift audit against an existing substrate. Compose A—02 around a single cycle close. Or run Adapt end-to-end as the continuous loop-closer beneath the work. Established brands with a working substrate can engage Adapt directly — bring your brand system, and Adapt evolves it forward as the field moves.",
+  modularRestatePill: "3 of 3 selectable independently",
+
+  ioBody: [
+    "Adapt runs on an existing calibration substrate — ideally a Sense substrate, but a documented brand book or a working calibration record from any prior cycle is enough. Field signal, performance reads, and channel data come from the operator side or are captured continuously through Track.",
+    "Outputs are a refreshed substrate, a written change brief that documents what shifted between cycles, and a forward-looking composition memo that names the adjustments recommended for Sense, Form, and Reach in the next cycle. The substrate never resets — it sharpens.",
+  ],
+  ioYouBring: [
+    "Calibration substrate or brand book",
+    "Performance & channel reads",
+    "Field signal access",
+    "Cycle horizon & cadence",
+    "Operator context & constraints",
+  ],
+  ioWeProduce: [
+    "Refreshed calibration substrate",
+    "Written change brief",
+    "Forward composition memo",
+    "Per-Product adjustment recommendations",
+    "Versioned cycle record",
+  ],
+  ioArrowGlyph: "Adapt →",
+
+  casesDisplay: "Adapt in the field.",
+  casesIntro:
+    "Each case carries its own brand register — not Amoeboid's. Adapt work is measured against substrate compounding: drift caught early, calibration sharpened, next cycle composed before the field shifts.",
+  cases: [
+    {
+      badge: "A—01 · A—02",
+      visVariant: "vis-b",
+      visCenterLabel: "Studio register",
+      caseNum: "Case 01",
+      category: "Consumer / DTC",
+      title: "Drift caught before it surfaced in production.",
+      body: "Continuous monitoring flagged calibration drift across variant production; substrate sharpened before the next cycle shipped.",
+    },
+    {
+      badge: "A—02 · A—03",
+      visVariant: "vis-a",
+      visCenterLabel: "Editorial register",
+      caseNum: "Case 02",
+      category: "Cultural institution",
+      title: "A change brief that named the next cycle's moves.",
+      body: "Cycle-end refresh paired with forward composition — Sense, Form, and Reach adjusted in step with shifting cultural weather.",
+    },
+    {
+      badge: "A—01 · A—02 · A—03",
+      visVariant: "vis-c",
+      visCenterLabel: "Operator register",
+      caseNum: "Case 03",
+      category: "SaaS / B2B",
+      title: "A substrate that compounded across four cycles.",
+      body: "Adapt end-to-end across two product launches — calibration sharpened cycle on cycle rather than re-litigated at each one.",
+    },
+  ],
+
+  crossDisplayLead: "Modular entry plays both ways.",
+  crossDisplayDim: "Continue, compose, or step back to the system.",
+  routes: [
+    {
+      label: "Product 01",
+      name: "Sense",
+      foot: "Reading layer",
+      arrow: "←",
+      href: "/sense",
+    },
+    {
+      label: "Product 02",
+      name: "Form",
+      foot: "Execution layer",
+      arrow: "←",
+      href: "/form",
+    },
+    {
+      label: "Product 03",
+      name: "Reach",
+      foot: "Activation layer",
+      arrow: "←",
+      href: "/reach",
+    },
+    {
+      label: "Up one",
+      name: "Products index",
+      foot: "All four Products",
+      arrow: "←",
+      href: "/products",
+    },
+  ],
+  crossCtaCopy:
+    "Engagements start at a single System, a single Product, or as composed orchestration. Adapt makes the compounding explicit — calibration sharpens cycle on cycle rather than resetting.",
 };
 
 /** Re-export type for ReactNode in case consumers extend later. */

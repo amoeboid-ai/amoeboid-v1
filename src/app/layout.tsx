@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s · Amoeboid",
   },
   description:
-    "Amoeboid is an editorial AI studio that turns one product into a season of campaign-quality outputs. Sense, Form, Reach — directed by human creativity.",
+    "Amoeboid is an editorial AI studio that turns one product into a season of campaign-quality outputs. Sense, Form, Reach, Adapt — directed by human creativity.",
   openGraph: {
     title: "Amoeboid — Create Differently",
     description:

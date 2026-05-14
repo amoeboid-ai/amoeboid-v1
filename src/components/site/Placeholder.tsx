@@ -13,6 +13,7 @@ type Variant =
   | "sense" /* horizontal/vertical grid lines */
   | "form" /* warm radial wash */
   | "reach" /* dark wired grid */
+  | "adapt" /* twin radial pulses — loop / compounding */
   | "vis-a"
   | "vis-b"
   | "vis-c"
@@ -26,6 +27,8 @@ const surfaceClass: Record<Variant, string> = {
     "[background-image:repeating-linear-gradient(0deg,rgba(12,12,12,0.05)_0_1px,transparent_1px_36px),repeating-linear-gradient(90deg,rgba(12,12,12,0.05)_0_1px,transparent_1px_36px),linear-gradient(180deg,#EEEBE5_0%,#E6E2D8_100%)]",
   form: "[background-image:radial-gradient(ellipse_at_38%_32%,rgba(246,244,239,0.65)_0%,rgba(12,12,12,0)_55%),linear-gradient(135deg,#EEEBE5_0%,#E6E2D8_60%,#d6d2c8_100%)]",
   reach: "bg-[linear-gradient(180deg,#1a1a18_0%,#0c0c0c_100%)]",
+  adapt:
+    "[background-image:radial-gradient(circle_at_72%_30%,rgba(12,12,12,0.07)_0%,rgba(12,12,12,0)_48%),radial-gradient(circle_at_28%_72%,rgba(12,12,12,0.05)_0%,rgba(12,12,12,0)_44%),linear-gradient(180deg,#EEEBE5_0%,#E6E2D8_100%)]",
   "vis-a": "bg-[linear-gradient(135deg,#d8d3c5_0%,#c2bdaf_100%)]",
   "vis-b": "bg-[linear-gradient(180deg,#1c1c1a_0%,#0c0c0c_100%)]",
   "vis-c": "bg-[linear-gradient(180deg,#EEEBE5_0%,#E6E2D8_100%)]",

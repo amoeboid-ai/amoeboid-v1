@@ -20,13 +20,13 @@ export default function Home() {
       {/* ============================== 01 HERO ============================== */}
       <Section as="section" pad="none" className="pt-14">
         <Reveal step={1} className="pb-9 border-b border-ink-line">
-          <Hero>Adaptive Creative AI Production.</Hero>
+          <Hero>Adaptive Creative AI.</Hero>
         </Reveal>
 
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between sm:gap-12 pt-7 pb-16">
           <Reveal step={2} className="flex-1">
             <p className="font-sans font-normal text-[clamp(22px,1.7vw,28px)] leading-[1.5] tracking-[-0.012em] text-ink-soft max-w-[48ch]">
-              A brand-calibrated creative AI production system — orchestrated across Sense, Form, and Reach, directed by human creativity.
+              A brand-calibrated creative AI production system — orchestrated across Sense, Form, Reach, and Adapt, directed by human creativity.
             </p>
           </Reveal>
           <Reveal step={3} className="sm:pb-1.5 shrink-0">
@@ -98,22 +98,22 @@ export default function Home() {
       {/* ============================== 02 PRODUCTS PREVIEW ============================== */}
       <Section as="section" pad="none" id="products" className="py-[120px] border-b border-ink-line">
         <Reveal step={0} className="mb-7">
-          <Eyebrow>Section 02 · Three Products</Eyebrow>
+          <Eyebrow>Section 02 · Four Products</Eyebrow>
         </Reveal>
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-end mb-14">
           <Reveal step={1}>
             <SectionDisplay className="max-w-[18ch]">
-              Three Products. <Dim>One calibrated stack.</Dim>
+              Four Products. <Dim>One calibrated stack.</Dim>
             </SectionDisplay>
           </Reveal>
           <Reveal step={2}>
             <Body className="max-w-[46ch]" tone="soft">
-              Sense reads. Form makes. Reach scales. Each is independently engageable; together they orchestrate a single calibration through every cycle of work.
+              Sense reads. Form makes. Reach scales. Adapt closes the loop. Each is independently engageable; together they orchestrate a single calibration through every cycle of work.
             </Body>
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
               href: "/sense",
@@ -172,8 +172,19 @@ export default function Home() {
               dark: true,
               reachGrid: true,
             },
+            {
+              href: "/adapt",
+              variant: "adapt" as const,
+              label: "Adapt",
+              corner: "P—04",
+              center: "Closing register",
+              meta: ["Loop-closer layer", "03 Systems"],
+              title: "Adapt",
+              copy: "A continuous loop-closer. Reads signal across Sense, Form, Reach, and the field — refreshes the calibration substrate, briefs what shifted, and composes the next cycle's adjustments.",
+              link: "Open Adapt",
+            },
           ].map((tile, i) => (
-            <Reveal key={tile.href} step={(i + 2) as 2 | 3 | 4}>
+            <Reveal key={tile.href} step={(i + 2) as 2 | 3 | 4 | 5}>
               <Link
                 href={tile.href}
                 className="group flex flex-col gap-[18px] no-underline text-ink"
@@ -214,7 +225,7 @@ export default function Home() {
 
         <Reveal step={5} className="mt-14 pt-6 border-t border-ink-line">
           <div className="flex flex-wrap items-center justify-between gap-6 font-mono-util text-ink-mute">
-            <span>03 Products · 12 Systems · Modular entry</span>
+            <span>04 Products · 15 Systems · Modular entry</span>
             <Link href="/products" className="text-ink hover:opacity-70 transition-opacity">
               Open Products hub →
             </Link>
@@ -242,11 +253,12 @@ export default function Home() {
         </div>
 
         <Reveal step={3}>
-          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-ink-line">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-ink-line">
             {[
               { href: "/sense#systems", ix: "Entry 01 · System", h: "Start with Sense Brand Intelligence", p: "Establish your brand calibration foundation." },
               { href: "/form#systems", ix: "Entry 02 · Product", h: "Start with Form Still", p: "Produce a single campaign with us." },
-              { href: "/products", ix: "Entry 03 · Orchestration", h: "Start with the full stack", p: "Orchestrated engagement across all three Products." },
+              { href: "/adapt", ix: "Entry 03 · Loop-closer", h: "Start with Adapt", p: "Established brand? Engage Adapt directly to keep calibration current as the field moves." },
+              { href: "/products", ix: "Entry 04 · Orchestration", h: "Start with the full stack", p: "Orchestrated engagement across all four Products." },
             ].map((row, i, arr) => (
               <Link
                 key={row.href}
@@ -254,7 +266,11 @@ export default function Home() {
                 className={cn(
                   "flex flex-col gap-3 py-7 pr-7 transition-[padding-left] hover:pl-1.5",
                   "border-b md:border-b-0 md:border-r border-ink-line",
-                  i === arr.length - 1 && "md:border-r-0 md:pr-0 border-b-0"
+                  i === arr.length - 1 && "lg:border-r-0 lg:pr-0",
+                  i === arr.length - 1 && "border-b-0",
+                  // Tighten right-border on the md 2-col row: 2nd cell drops border-r at md
+                  i % 2 === 1 && "md:border-r-0 lg:border-r",
+                  // Last cell on lg keeps no border-r (already handled above)
                 )}
               >
                 <Mono>{row.ix}</Mono>
@@ -420,7 +436,7 @@ export default function Home() {
               <strong className="text-ink font-medium">sharpens through the engagement</strong> rather than degrading. Format Intelligence is its forward edge: research-investment proof that the substrate keeps reading.
             </Body>
             <Body className="max-w-[50ch]" tone="soft">
-              Every cycle adds to the calibration. The calibration never resets. That is the durable asset.
+              Every cycle adds to the calibration. The calibration never resets. <strong className="text-ink font-medium">Adapt — the loop-closer running continuously beneath the work — is the mechanism that makes the substrate compound rather than reset.</strong> That is the durable asset.
             </Body>
           </Reveal>
         </div>

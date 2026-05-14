@@ -19,9 +19,9 @@ import { CTAGroup } from "@/components/cta/CTAGroup";
 import { cn } from "@/lib/cn";
 
 export const metadata = {
-  title: "Products — Sense, Form, Reach",
+  title: "Products — Sense, Form, Reach, Adapt",
   description:
-    "Three Products. One adaptive system. Sense reads the brand and the field. Form makes the work. Reach scales it across channels.",
+    "Four Products. One adaptive system. Sense reads the brand and the field. Form makes the work. Reach scales it across channels. Adapt closes the loop.",
 };
 
 const SENSE_SYSTEMS = [
@@ -112,15 +112,15 @@ export default function ProductsHub() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-end">
           <Reveal step={1}>
             <Hero className="!text-[clamp(56px,7vw,104px)] !leading-[1.0] max-w-[18ch]">
-              Three Products. <Dim>One adaptive system.</Dim>
+              Four Products. <Dim>One adaptive system.</Dim>
             </Hero>
           </Reveal>
           <Reveal step={2} className="space-y-3.5">
             <Body className="max-w-[50ch]" tone="soft">
-              <strong className="text-ink font-medium">Sense, Form, and Reach</strong> are the three Products that compose Amoeboid&rsquo;s adaptive creative production system.
+              <strong className="text-ink font-medium">Sense, Form, Reach, and Adapt</strong> are the four Products that compose Amoeboid&rsquo;s adaptive creative production system.
             </Body>
             <Body className="max-w-[50ch]" tone="soft">
-              Each is its own destination — calibrated to a distinct stage of the work. Sense reads the brand and the field. Form makes the work across still, motion, spatial, and sonic. Reach takes a piece into variants, channels, and measured outcomes.
+              Each is its own destination — calibrated to a distinct stage of the work. Sense reads the brand and the field. Form makes the work across still, motion, spatial, and sonic. Reach takes a piece into variants, channels, and measured outcomes. Adapt closes the loop — refreshing the substrate and composing the next cycle&rsquo;s adjustments.
             </Body>
             <Body className="max-w-[50ch]" tone="soft">
               Buyers enter at any Product, or any single System within a Product. Orchestration is the optimal path we sell toward — never the gating requirement.
