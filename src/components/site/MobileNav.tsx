@@ -30,7 +30,7 @@ import { cn } from "@/lib/cn";
  */
 export function MobileNav() {
   const pathname = usePathname();
-  const { open: openAdaptive } = useAdaptive();
+  const { isOpen: adaptiveOpen } = useAdaptive();
   const prefersReduced = useReducedMotion();
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -41,6 +41,12 @@ export function MobileNav() {
 
   // SSR-safe portal target
   useEffect(() => setMounted(true), []);
+
+  // Close the mobile menu when the Adaptive widget opens — only one full-screen
+  // surface visible at any time (Section 4.1, build-dev-1.2).
+  useEffect(() => {
+    if (adaptiveOpen) setIsOpen(false);
+  }, [adaptiveOpen]);
 
   const close = useCallback(() => setIsOpen(false), []);
   const open = useCallback(() => setIsOpen(true), []);
@@ -167,6 +173,51 @@ export function MobileNav() {
               <ul className="flex flex-col gap-2">
                 {NAV.map((item) => {
                   const active = pathname?.startsWith(item.href) ?? false;
+                  if (item.children?.length) {
+                    return (
+                      <li key={item.href}>
+                        <details className="group">
+                          <summary
+                            className={cn(
+                              linkClass,
+                              "list-none flex items-center justify-between cursor-pointer",
+                              active && "underline underline-offset-[6px] decoration-1"
+                            )}
+                          >
+                            <span>{item.label}</span>
+                            <span
+                              aria-hidden
+                              className="font-mono-util text-ink-mute transition-transform group-open:rotate-45"
+                            >
+                              +
+                            </span>
+                          </summary>
+                          <ul className="pl-4 pb-3 flex flex-col gap-1">
+                            <li>
+                              <Link
+                                href={item.href}
+                                onClick={close}
+                                className="block py-2 font-display text-[20px] tracking-[-0.005em] text-ink-soft hover:text-ink"
+                              >
+                                {item.label} hub
+                              </Link>
+                            </li>
+                            {item.children.map((child) => (
+                              <li key={child.href}>
+                                <Link
+                                  href={child.href}
+                                  onClick={close}
+                                  className="block py-2 font-display text-[20px] tracking-[-0.005em] text-ink-soft hover:text-ink"
+                                >
+                                  {child.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </details>
+                      </li>
+                    );
+                  }
                   return (
                     <li key={item.href}>
                       <Link
@@ -186,12 +237,9 @@ export function MobileNav() {
               </ul>
 
               <div className="mt-10 pt-7 border-t border-ink-line">
-                <button
-                  type="button"
-                  onClick={() => {
-                    close();
-                    openAdaptive();
-                  }}
+                <Link
+                  href="/contact"
+                  onClick={close}
                   className={cn(
                     "inline-flex items-center gap-2 rounded-full px-5 py-2.5",
                     "bg-ink text-paper font-mono-util text-[11px] tracking-[0.16em]",
@@ -199,7 +247,7 @@ export function MobileNav() {
                   )}
                 >
                   Contact
-                </button>
+                </Link>
               </div>
             </nav>
           </motion.div>

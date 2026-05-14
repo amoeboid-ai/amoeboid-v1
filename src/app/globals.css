@@ -89,6 +89,57 @@ a {
   color: inherit;
 }
 
+/* Triad-merge loader — Adaptive thinking-state indicator */
+@keyframes triadA { 0%, 100% { cx: 50; }  50% { cx: 100; } }
+@keyframes triadB { 0%, 100% { cy: 60; }  50% { cy: 140; } }
+@keyframes triadC { 0%, 100% { cx: 150; } 50% { cx: 100; } }
+.triad-merge .a { animation: triadA 2s ease-in-out infinite; }
+.triad-merge .b { animation: triadB 2s ease-in-out infinite; }
+.triad-merge .c { animation: triadC 2s ease-in-out infinite; }
+
+/* Markdown response styling inside Adaptive bubbles */
+.adaptive-md > * { margin: 0; }
+.adaptive-md > * + * { margin-top: 0.6em; }
+.adaptive-md h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.05em;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-top: 1em;
+}
+.adaptive-md h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  margin-top: 0.9em;
+}
+.adaptive-md strong { font-weight: 600; }
+.adaptive-md em { font-style: italic; }
+.adaptive-md ul,
+.adaptive-md ol { padding-left: 1.25em; }
+.adaptive-md ul { list-style: disc; }
+.adaptive-md ol { list-style: decimal; }
+.adaptive-md li + li { margin-top: 0.25em; }
+.adaptive-md code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: rgba(12,12,12,0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+.adaptive-md pre {
+  background: rgba(12,12,12,0.06);
+  padding: 0.7em 0.9em;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.85em;
+}
+.adaptive-md pre code { background: transparent; padding: 0; }
+.adaptive-md a { text-decoration: underline; text-underline-offset: 2px; }
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -104,5 +155,11 @@ a {
   }
   .hero-poster {
     display: block !important;
+  }
+  /* Triad-merge: pause the three circle animations, keep static composition */
+  .triad-merge .a,
+  .triad-merge .b,
+  .triad-merge .c {
+    animation: none !important;
   }
 }

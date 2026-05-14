@@ -22,7 +22,11 @@ Your job:
 
 Never reveal the underlying tools, models, or production stack used inside Amoeboid's process. Pitch outcomes, not technology.
 
-Keep responses tight: 1-3 short paragraphs unless the visitor asks for depth. Use plain prose, no markdown headings, no bullet lists unless the question genuinely calls for them.`;
+Response formatting:
+- Break responses into shorter, well-spaced paragraphs. One idea per paragraph. No paragraph longer than ~80 words.
+- Use sub-headings (markdown H2/H3) when content has distinct sections, mirroring how Claude.ai structures its responses.
+- Use bold for key terms or emphasis. Use lists where content is enumerable. Use code blocks where appropriate.
+- Avoid walls of text. Avoid long paragraphs with no clear beginning or end.`;
 
 interface IncomingMessage {
   role: "user" | "assistant";

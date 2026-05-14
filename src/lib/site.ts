@@ -5,12 +5,27 @@ export const SITE = {
   copyright: "© Amoeboid 2026",
 } as const;
 
-export const NAV = [
-  { href: "/products", label: "Products" },
+export interface NavItem {
+  href: string;
+  label: string;
+  children?: { href: string; label: string }[];
+}
+
+export const NAV: NavItem[] = [
+  {
+    href: "/products",
+    label: "Products",
+    children: [
+      { href: "/sense", label: "Sense" },
+      { href: "/form", label: "Form" },
+      { href: "/reach", label: "Reach" },
+    ],
+  },
   { href: "/engine", label: "Engine" },
   { href: "/work", label: "Work" },
   { href: "/company", label: "Company" },
-] as const;
+  { href: "/community", label: "Community" },
+];
 
 export const FOOTER_NAV: { heading: string; links: { href: string; label: string }[] }[] = [
   {
@@ -28,12 +43,13 @@ export const FOOTER_NAV: { heading: string; links: { href: string; label: string
       { href: "/engine", label: "Engine" },
       { href: "/work", label: "Work" },
       { href: "/company", label: "Company" },
+      { href: "/community", label: "Community" },
     ],
   },
   {
     heading: "Engage",
     links: [
-      { href: "/company#contact", label: "Start an engagement" },
+      { href: "/contact", label: "Contact" },
       { href: "mailto:hello@amoeboid.ai", label: "Email the team" },
     ],
   },
