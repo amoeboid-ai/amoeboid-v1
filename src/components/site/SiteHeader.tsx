@@ -1,34 +1,57 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { Wordmark } from "@/components/marks/Wordmark";
 import { NAV, type NavItem } from "@/lib/site";
 import { cn } from "@/lib/cn";
 import { useAdaptive } from "@/components/adaptive/AdaptiveContext";
 import { MobileNav } from "@/components/site/MobileNav";
+import { createClient } from "@/lib/supabase/client";
 
 /**
  * Header — identical on every page.
  *
  * Left:  wordmark
  * Centre nav (≥md): Products (dropdown · Sense/Form/Reach/Adapt) · Work · Company · Community
- * Right cluster:    Login (ghost) · Talk to Adaptive (primary pill)
- * Mobile (<md):     Login (compact) · Adaptive (pill) · Menu trigger
+ * Right cluster:    Login | Sign out (depends on auth state) · Talk to Adaptive (primary pill)
+ * Mobile (<md):     Same right cluster, Adaptive label collapses · Menu trigger
  *
- * Talk to Adaptive opens the Adaptive widget anchored to the header
- * top-right (see AdaptiveWidget). The old Contact pill is removed and
- * now lives in the footer (FOOTER_NAV) and on /contact.
+ * Auth pill: layout.tsx fetches the session server-side and passes
+ * initialAuthed in; the header subscribes to onAuthStateChange to keep
+ * the pill in sync after sign-in / sign-out without a full reload.
  *
- * Pill labels render in literal sentence case ("Login", "Talk to Adaptive").
- * Both the top-level menu links and the right-cluster pills use the
- * shared .nav-label token so the header reads as one typographic system.
+ * Pill labels render in literal sentence case ("Login" / "Sign out" /
+ * "Talk to Adaptive"). Both the top-level menu links and the right-
+ * cluster pills use the shared .nav-label token so the header reads
+ * as one typographic system.
  */
-export function SiteHeader() {
+export function SiteHeader({ initialAuthed = false }: { initialAuthed?: boolean }) {
   const pathname = usePathname();
+  const router = useRouter();
   const { open: openAdaptive } = useAdaptive();
   const [productsOpen, setProductsOpen] = useState(false);
+  const [authed, setAuthed] = useState(initialAuthed);
+  const [signingOut, setSigningOut] = useState(false);
+  const supabase = useMemo(() => createClient(), []);
+
+  useEffect(() => {
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setAuthed(!!session);
+    });
+    return () => subscription.unsubscribe();
+  }, [supabase]);
+
+  async function handleSignOut() {
+    if (signingOut) return;
+    setSigningOut(true);
+    await supabase.auth.signOut();
+    router.push("/login");
+    router.refresh();
+  }
 
   return (
     <header className="sticky top-0 z-30 bg-paper/85 backdrop-blur-md border-b border-ink-line">
@@ -55,38 +78,75 @@ export function SiteHeader() {
 
           <MobileNav />
 
-          {/* Login — ghost, inner side of Talk to Adaptive */}
-          <Link
-            href="#"
-            aria-label="Login"
-            className={cn(
-              "inline-flex items-center gap-2 rounded-full",
-              "px-3 py-3 md:px-4 md:py-3",
-              "bg-paper text-ink border border-ink",
-              "nav-label",
-              "hover:bg-ink hover:text-paper transition-colors",
-              // Hide label below 360px, show icon only
-              "max-[359px]:px-2"
-            )}
-          >
-            <span className="max-[359px]:sr-only">Login</span>
-            <svg
-              viewBox="0 0 16 16"
-              width="13"
-              height="13"
-              fill="none"
-              aria-hidden="true"
-              className="hidden max-[359px]:inline-block"
+          {/* Auth pill — Login (link) when signed out, Sign out (button) when signed in */}
+          {authed ? (
+            <button
+              type="button"
+              onClick={handleSignOut}
+              disabled={signingOut}
+              aria-label="Sign out"
+              className={cn(
+                "inline-flex items-center gap-2 rounded-full",
+                "px-3 py-3 md:px-4 md:py-3",
+                "bg-paper text-ink border border-ink",
+                "nav-label",
+                "hover:bg-ink hover:text-paper transition-colors",
+                "disabled:opacity-50 disabled:cursor-not-allowed",
+                "max-[359px]:px-2"
+              )}
             >
-              <circle cx="8" cy="5.5" r="2.8" stroke="currentColor" strokeWidth="1.3" />
-              <path
-                d="M2.5 13.5c1-2.7 3.2-4 5.5-4s4.5 1.3 5.5 4"
-                stroke="currentColor"
-                strokeWidth="1.3"
-                strokeLinecap="round"
-              />
-            </svg>
-          </Link>
+              <span className="max-[359px]:sr-only">
+                {signingOut ? "Signing out…" : "Sign out"}
+              </span>
+              <svg
+                viewBox="0 0 16 16"
+                width="13"
+                height="13"
+                fill="none"
+                aria-hidden="true"
+                className="hidden max-[359px]:inline-block"
+              >
+                <path
+                  d="M6 2.5H3.5A1 1 0 0 0 2.5 3.5v9a1 1 0 0 0 1 1H6M10 5l3 3-3 3M13 8H6"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              aria-label="Login"
+              className={cn(
+                "inline-flex items-center gap-2 rounded-full",
+                "px-3 py-3 md:px-4 md:py-3",
+                "bg-paper text-ink border border-ink",
+                "nav-label",
+                "hover:bg-ink hover:text-paper transition-colors",
+                "max-[359px]:px-2"
+              )}
+            >
+              <span className="max-[359px]:sr-only">Login</span>
+              <svg
+                viewBox="0 0 16 16"
+                width="13"
+                height="13"
+                fill="none"
+                aria-hidden="true"
+                className="hidden max-[359px]:inline-block"
+              >
+                <circle cx="8" cy="5.5" r="2.8" stroke="currentColor" strokeWidth="1.3" />
+                <path
+                  d="M2.5 13.5c1-2.7 3.2-4 5.5-4s4.5 1.3 5.5 4"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </Link>
+          )}
 
           {/* Talk to Adaptive — primary pill */}
           <button

@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { NebulaFilterDefs } from "@/components/marks/NebulaFilterDefs";
 import { AdaptiveWidget } from "@/components/adaptive/AdaptiveWidget";
 import { Providers } from "@/components/site/Providers";
+import { createClient } from "@/lib/supabase/server";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -37,11 +38,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   return (
     <html
       lang="en"
@@ -50,7 +56,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-paper text-ink antialiased">
         <Providers>
           <NebulaFilterDefs />
-          <SiteHeader />
+          <SiteHeader initialAuthed={!!user} />
           <main className="flex-1 flex flex-col">{children}</main>
           <SiteFooter />
           <AdaptiveWidget />
