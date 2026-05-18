@@ -17,7 +17,7 @@ export function SiteFooter() {
           <div className="md:col-span-5">
             <Lockup variant="horizontal" symbolSize={48} wordmarkSize={28} staticSymbol />
             <Body className="mt-8 max-w-md" tone="soft">
-              An editorial AI studio. We turn one product into a season of campaign-quality outputs — calibrated to brand, format, and scale.
+              An editorial AI studio. We produce campaign-quality assets against a brand calibration that compounds every cycle instead of resetting.
             </Body>
           </div>
           <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">

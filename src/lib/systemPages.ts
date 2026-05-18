@@ -242,7 +242,7 @@ export const SENSE_PAGE: SystemPageData = {
 
   ioBody: [
     "Sense engagements run on whatever substrate already exists — brand books, prior research, performance data, founder voice memos. Where input is thin, agentic discovery fills the field. Where it’s rich, the System compounds against it rather than restating it.",
-    "Outputs are working artifacts: structured substrate every downstream Product can query, plus a human-shaped reading document for stakeholder decisions. No slideware unless slideware is itself the deliverable.",
+    "What you receive: working artifacts — structured substrate every downstream Product can query, plus a human-shaped reading document for stakeholder decisions. No slideware unless slideware is itself the deliverable.",
   ],
   ioYouBring: [
     "Brand documents, however raw",
@@ -443,7 +443,7 @@ export const FORM_PAGE: SystemPageData = {
 
   ioBody: [
     "Form engagements ideally run on a Sense calibration substrate — but they don’t require one. A live brand book, a clear creative brief, and a willingness to hold the work to brand-level fidelity is enough to commission. Where Sense exists, every craft decision compounds against it; where it doesn’t, Form establishes a working calibration before craft begins.",
-    "Outputs are finished, master-grade work across the relevant media shapes — production files, delivery formats, and a calibration record so the next cycle compounds rather than resets.",
+    "What you receive: finished, master-grade work across the relevant media shapes — production files, delivery formats, and a calibration record so the next cycle compounds rather than resets.",
   ],
   ioYouBring: [
     "Sense substrate, or a working brand",
@@ -636,7 +636,7 @@ export const REACH_PAGE: SystemPageData = {
 
   ioBody: [
     "Reach engagements run on a master — a finished piece of creative work, ideally produced in Form, but a vendor-delivered or in-house master is fine if calibration is documented. Channel set, audience targeting, and business KPIs come from the operator side; Reach handles variant production, native deployment, and signal interpretation.",
-    "Outputs are deployed assets across every variant and channel, plus a continuously-updated performance read that feeds back to the calibration substrate — turning each cycle into compounding signal rather than restart cost.",
+    "What you receive: deployed assets across every variant and channel, plus a continuously-updated performance read that feeds back to the calibration substrate — turning each cycle into compounding signal rather than restart cost.",
   ],
   ioYouBring: [
     "Master creative (Form or external)",
@@ -776,7 +776,7 @@ export const ADAPT_PAGE: SystemPageData = {
       num: "A—01",
       name: "Track",
       claim:
-        "Always-on signal capture across every active engagement. Track reads output from each Product currently engaged — substrate state from Sense, creative performance from Form, market and audience response from Reach — and pairs it with external field signal: market shifts, cultural movement, format change. Runs continuously beneath the engagement, not as a periodic audit.",
+        "Continuous signal capture across every active engagement. Track reads signal from each engaged Product — substrate state from Sense, creative performance from Form, market and audience response from Reach — paired with external field signal: market shifts, cultural movement, format change. The captured signal is what crosses the cycle boundary — feeding Tune and Compose so the next cycle starts a step ahead of the last, not reset to zero.",
       includes:
         "Continuous per-Product signal capture, calibration drift detection, format shift tracking, audience response reads, competitive and cultural field monitoring, signal-to-substrate routing.",
       tags: ["Continuous monitoring", "Drift", "Signal", "Field"],
@@ -790,7 +790,7 @@ export const ADAPT_PAGE: SystemPageData = {
       num: "A—02",
       name: "Tune",
       claim:
-        "At cycle close, Tune reconciles tracked signal against the calibration substrate. Drift gets surfaced. Stabilised positions get sharpened. Patterns that no longer fit get retired. Two outputs: a refreshed substrate carried into the next cycle, and a written change brief documenting what shifted and why.",
+        "At cycle close, Tune reconciles tracked signal against the calibration substrate. Drift gets surfaced. Stabilised positions get sharpened. Patterns that no longer fit get retired. Two artifacts cross into the next cycle: a refreshed substrate, and a written change brief documenting what shifted and why.",
       includes:
         "Substrate refresh, calibration update document, written change brief, cycle delta report, drift surface and retirement log, version-controlled substrate handoff.",
       tags: ["Cycle-end refresh", "Substrate", "Change brief"],
@@ -823,7 +823,7 @@ export const ADAPT_PAGE: SystemPageData = {
 
   ioBody: [
     "Adapt runs on an existing calibration substrate — ideally a Sense substrate, but a documented brand book or a working calibration record from any prior cycle is enough. Field signal, performance reads, and channel data come from the operator side or are captured continuously through Track.",
-    "Outputs are a refreshed substrate, a written change brief that documents what shifted between cycles, and a forward-looking composition memo that names the adjustments recommended for Sense, Form, and Reach in the next cycle. The substrate never resets — it sharpens.",
+    "What you receive: a refreshed substrate, a written change brief that documents what shifted between cycles, and a forward-looking composition memo that names the adjustments recommended for Sense, Form, and Reach in the next cycle. The substrate never resets — it sharpens.",
   ],
   ioYouBring: [
     "Calibration substrate or brand book",

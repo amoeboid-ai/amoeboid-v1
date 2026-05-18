@@ -432,7 +432,7 @@ function InputsSection({ data }: { data: SystemPageData }) {
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-16 items-end mb-16">
         <div>
           <Reveal step={0} className="mb-7">
-            <SectionEyebrow>Section 04 · Inputs &amp; outputs</SectionEyebrow>
+            <SectionEyebrow>Section 04 · Inputs &amp; assets</SectionEyebrow>
           </Reveal>
           <Reveal step={1}>
             <SectionDisplay className="!text-[clamp(36px,4.4vw,60px)] !leading-[1.05] tracking-[-0.028em] max-w-[18ch]">

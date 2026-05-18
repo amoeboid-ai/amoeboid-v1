@@ -95,6 +95,15 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* ============================== 01.5 PLAIN ON-RAMP ============================== */}
+      <Section as="section" pad="none" className="py-[80px] border-b border-ink-line">
+        <Reveal step={0}>
+          <p className="font-display font-medium text-[clamp(22px,2.1vw,32px)] leading-[1.3] tracking-[-0.016em] text-ink max-w-[64ch]">
+            Your brand, calibrated once and compounding — every cycle of work sharpens it instead of resetting to zero. Still, motion, spatial, sonic, produced against a substrate that holds coherent at scale.
+          </p>
+        </Reveal>
+      </Section>
+
       {/* ============================== 02 PRODUCTS PREVIEW ============================== */}
       <Section as="section" pad="none" id="products" className="py-[120px] border-b border-ink-line">
         <Reveal step={0} className="mb-7">
@@ -441,7 +450,7 @@ export default function Home() {
             </Body>
             <Body className="max-w-[50ch]" tone="soft">
               Brand Calibration is the layer that resolves it. A substrate that reads voice, register, audience, and format accurately enough to enforce coherence at variant volume — and that{" "}
-              <strong className="text-ink font-medium">sharpens through the engagement</strong> rather than degrading. Format Intelligence is its forward edge: research-investment proof that the substrate keeps reading.
+              <strong className="text-ink font-medium">sharpens through the engagement</strong> rather than degrading. Format Intelligence is its forward edge: research-investment proof that the calibration keeps reading.
             </Body>
             <Body className="max-w-[50ch]" tone="soft">
               Every cycle adds to the calibration. The calibration never resets. <strong className="text-ink font-medium">Adapt — the loop-closer running continuously beneath the work — is the mechanism that makes the substrate compound rather than reset.</strong> That is the durable asset.

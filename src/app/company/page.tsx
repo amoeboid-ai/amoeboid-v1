@@ -143,7 +143,7 @@ export default function CompanyPage() {
                 <strong className="text-ink font-medium">The orchestration is visible by design.</strong> Four Products — Sense, Form, Reach, Adapt — each addressable, each inspectable. Clients see what is composed for them and where the calibration lives. An orchestration you can&rsquo;t inspect is one you can&rsquo;t trust to compound; we treat that as a structural property of the work, not a marketing one.
               </Body>
               <Body tone="soft" className="max-w-[48ch]">
-                <strong className="text-ink font-medium">Brand Calibration is the moat.</strong> The substrate that holds a brand&rsquo;s register coherent across volume is what we sell. The output is downstream of it. Every engagement adds to the substrate; the substrate never resets between cycles.
+                <strong className="text-ink font-medium">Brand Calibration is the moat.</strong> The substrate that holds a brand&rsquo;s register coherent across volume is what we sell. The output is downstream of it. Every engagement adds to the substrate; it never resets between cycles.
               </Body>
             </div>
             <div className="space-y-4">
@@ -151,7 +151,7 @@ export default function CompanyPage() {
                 <strong className="text-ink font-medium">Modular entry, not packaged offerings.</strong> A client can begin at any Product. Sense without Form. Form without Reach. Adapt multi-cycle without a single campaign. The contract composes against need, not against a price sheet. Cases in our portfolio prove this empirically.
               </Body>
               <Body tone="soft" className="max-w-[48ch]">
-                <strong className="text-ink font-medium">Agentic and human, named.</strong> Where work runs autonomously through the stack and where it is held by a person is published per case, not obscured. The studio reads like an instrument; the instrument reads like a substrate.
+                <strong className="text-ink font-medium">Agentic and human, named.</strong> Where work runs autonomously through the stack and where it is held by a person is published per case, not obscured. The studio reads like an instrument; the instrument reads like a calibration layer.
               </Body>
             </div>
           </div>
@@ -297,7 +297,7 @@ export default function CompanyPage() {
             </Reveal>
             <Reveal step={2}>
               <Body tone="soft" className="mt-7 max-w-[44ch]">
-                <strong className="text-ink font-medium">Start an engagement</strong> if you want to compose work, ask a structural question, or read a substrate against your brand. Replies within two business days, from a partner.
+                <strong className="text-ink font-medium">Start an engagement</strong> if you want to compose work, ask a structural question, or read a calibration against your brand. Replies within two business days, from a partner.
               </Body>
             </Reveal>
 

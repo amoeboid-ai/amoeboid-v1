@@ -45,7 +45,7 @@ const REACH_SYSTEMS = [
   { num: "R—03", name: "Performance", desc: "Measurement that loops back to Sense." },
 ];
 
-const OUTPUTS = [
+const ASSETS = [
   {
     lbl: "F—01 / Still",
     title: "Still",
@@ -127,6 +127,71 @@ export default function ProductsHub() {
             </Body>
           </Reveal>
         </div>
+      </Section>
+
+      {/* 1.5 ORIENTATION — order menu: four Products, the Assets each produces, one promise */}
+      <Section pad="none" surface="paper-2" className="py-[100px] border-b border-ink-line">
+        <Reveal step={0} className="mb-9">
+          <NumberedLabel prefix="Orientation" label="What you can order" />
+        </Reveal>
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-16 items-end mb-10">
+          <Reveal step={1}>
+            <SectionDisplay className="!text-[clamp(32px,3.6vw,52px)] max-w-[18ch]">
+              The order menu, <Dim>plainly.</Dim>
+            </SectionDisplay>
+          </Reveal>
+          <Reveal step={2}>
+            <Body tone="soft" className="max-w-[50ch]">
+              Four Products. Each composed of named Systems. Each producing concrete Assets. Engage any Product, or any single System within one — orchestration is the optimal path, never the gating requirement.
+            </Body>
+          </Reveal>
+        </div>
+
+        <Reveal step={3}>
+          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-ink-line">
+            {[
+              {
+                num: "Product 01",
+                name: "Sense",
+                line: "Brand, audience, cultural, competitive, and format intelligence — structured into the calibration substrate everything else composes against.",
+              },
+              {
+                num: "Product 02",
+                name: "Form",
+                line: "Still, motion, spatial, and sonic — campaign photography, brand films, 3D visualization, editorial content, identity systems, key art, packaging surfaces.",
+              },
+              {
+                num: "Product 03",
+                name: "Reach",
+                line: "Variant production at brand-coherent scale, channel-shaped activation, performance reads that loop back to Sense.",
+              },
+              {
+                num: "Product 04",
+                name: "Adapt",
+                line: "A continuous loop-closer between cycles — refreshed substrate, a change brief that names what shifted, and a composition memo for the next cycle.",
+              },
+            ].map((p, i, arr) => (
+              <li
+                key={p.num}
+                className={cn(
+                  "flex flex-col gap-3 py-7 pr-7",
+                  "border-b md:border-b-0 md:border-r border-ink-line",
+                  i === arr.length - 1 && "lg:border-r-0 lg:pr-0",
+                  i === arr.length - 1 && "border-b-0",
+                  i % 2 === 1 && "md:border-r-0 lg:border-r"
+                )}
+              >
+                <span className="font-mono-util text-ink-mute">{p.num}</span>
+                <h4 className="font-display font-medium text-[clamp(22px,1.9vw,28px)] leading-[1.15] tracking-[-0.02em] text-ink">
+                  {p.name}
+                </h4>
+                <p className="font-display text-[14.5px] leading-[1.55] tracking-[-0.005em] text-ink-soft max-w-[34ch]">
+                  {p.line}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
       </Section>
 
       {/* 2. SENSE — image left */}
@@ -254,14 +319,14 @@ export default function ProductsHub() {
         </Reveal>
       </Section>
 
-      {/* 4.5 OUTPUTS CATALOG */}
-      <Section pad="none" surface="paper-2" id="outputs" className="py-[120px] border-b border-ink-line">
+      {/* 4.5 ASSETS CATALOG */}
+      <Section pad="none" surface="paper-2" id="assets" className="py-[120px] border-b border-ink-line">
         <Reveal step={0} className="mb-9">
-          <NumberedLabel prefix="/ Catalog" label="Outputs" />
+          <NumberedLabel prefix="/ Catalog" label="Assets" />
         </Reveal>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-end mb-10">
           <Reveal step={1}>
-            <SectionDisplay>Outputs.</SectionDisplay>
+            <SectionDisplay>Assets.</SectionDisplay>
           </Reveal>
           <Reveal step={2}>
             <Body tone="soft" className="max-w-[44ch]">
@@ -271,13 +336,13 @@ export default function ProductsHub() {
         </div>
         <Reveal step={2}>
           <Body className="max-w-[78ch]" tone="soft">
-            <strong className="text-ink font-medium">Form is the creation layer.</strong> Sense informs every output with brand calibration and audience grounding. Reach activates outputs across channels through variants, deployment, and performance loops. Adapt closes the loop — refreshing the substrate against signal from the field.
+            <strong className="text-ink font-medium">Form is the creation layer.</strong> Sense informs every asset with brand calibration and audience grounding. Reach activates assets across channels through variants, deployment, and performance loops. Adapt closes the loop — refreshing the calibration against signal from the field.
           </Body>
         </Reveal>
 
         <Reveal step={3} className="mt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {OUTPUTS.map((col) => (
+            {ASSETS.map((col) => (
               <div
                 key={col.title}
                 className={cn(
@@ -312,7 +377,7 @@ export default function ProductsHub() {
 
         <Reveal step={4} className="mt-10">
           <Body tone="soft" className="max-w-[68ch] text-[15px]">
-            Outputs flow through Reach for multi-context deployment — channel variants, activation, performance optimization.
+            Assets flow through Reach for multi-context deployment — channel variants, activation, performance optimization.
           </Body>
         </Reveal>
       </Section>
@@ -352,7 +417,7 @@ export default function ProductsHub() {
           </Reveal>
           <Reveal step={2}>
             <Body tone="soft" className="max-w-[48ch]">
-              Five structural moments. The shape doesn&rsquo;t change — the composition does. Each engagement runs against this sequence; what scales is the substrate underneath it.
+              Five structural moments. The shape doesn&rsquo;t change — the composition does. Each engagement runs against this sequence; what scales is the calibration layer underneath it.
             </Body>
           </Reveal>
         </div>
@@ -386,7 +451,7 @@ export default function ProductsHub() {
         <Reveal step={4} className="mt-12 pt-7 border-t border-ink-line">
           <div className="flex flex-wrap items-center justify-between gap-8">
             <Body tone="soft" className="max-w-[52ch] text-[15px]">
-              <strong className="text-ink font-medium">The shape is the contract.</strong> Calibration steps in only when it&rsquo;s the right substrate moment; the proposal in Step 02 names which Systems run and which sit out.
+              <strong className="text-ink font-medium">The shape is the contract.</strong> Calibration steps in only when it&rsquo;s the right moment in the engagement; the proposal in Step 02 names which Systems run and which sit out.
             </Body>
             <CTAGroup pattern="engagement-first" />
           </div>
