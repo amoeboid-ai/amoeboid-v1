@@ -29,11 +29,11 @@ export const metadata: Metadata = {
     template: "%s · Amoeboid",
   },
   description:
-    "Amoeboid is an editorial AI studio that turns one product into a season of campaign-quality outputs. Sense, Form, Reach, Adapt — directed by human creativity.",
+    "Amoeboid is an editorial AI studio that produces campaign-quality assets against a brand calibration that compounds every cycle. Sense, Form, Reach, Adapt — directed by human creativity.",
   openGraph: {
     title: "Amoeboid — Create Differently",
     description:
-      "An editorial AI studio that turns one product into a season of campaign-quality outputs.",
+      "An editorial AI studio that produces campaign-quality assets against a brand calibration that compounds every cycle.",
     type: "website",
   },
 };
